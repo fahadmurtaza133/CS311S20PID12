@@ -1,0 +1,130 @@
+package plagrism;
+
+public class plagrism {
+	
+
+	public static String[] Substring(String s)
+	{
+		
+		   int temp1 = s.length();
+		   String[]  s1 = s.split("");
+		   
+		  
+		  
+		   String [] fs1 = new String [1000];
+		   for (int k=0; k<temp1; k++)
+		    {
+		    	fs1[k] ="";
+		    	
+		    	
+		    	
+		    }
+		    int j=0;
+		    
+	       for (int i = 0; j!=temp1; i++)
+		    
+		    {
+		    	
+		    		
+		    	for (; !s1[j].contentEquals(".")  ; j++)
+		    		
+		    		 
+		    	{  fs1[i]+=s1[j];
+
+	    		
+		    		
+		     
+	                 
+		    	}
+		    	j++;
+		    	
+		    	
+		    	
+		    	//System.out.println("Substrings in file 1 are -> "+  fs1[i]);
+		    
+		 
+		    
+		
+		    } 
+		
+    return fs1;		
+		
+		
+	
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		   String f1 = "hi Ali. how are you?. are you hungry. you and i in love.";
+		    String f2 = "hi Fahad. you and i in love. are you hungry. you.";
+		   
+		    
+		  String[] newf1 = Substring(f1);
+		  
+		  String [] newf2 = Substring(f2);
+		  int n = newf1.length;
+		 
+		  
+// finding substring in other string	  
+		 for (int i=0; !newf1[i].contentEquals(""); i++)
+			
+			 {
+			       for (int j=0; !newf2[j].contentEquals(""); j++)
+		  
+			  {
+			    	   if (newf1[i].equals(newf2[j]))
+			  
+			  {
+					 
+					 System.out.println(" Plageriasm found and The common line is -> " + newf1[i]);
+					 
+					
+				 }
+			  else
+			  {
+				 
+			  }
+			    	   
+			    	   
+			  } 
+					  
+					  
+					  
+		  
+				  
+				  
+				  
+			  }
+			  
+			  
+			  
+			  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
