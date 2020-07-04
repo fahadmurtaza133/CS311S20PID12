@@ -1,0 +1,31 @@
+/*	System.out.println(newstring[1]);
+		String [] substring = new String [100];
+		
+		for (int i=0; i<s2.length(); i++)
+		{ 
+			for (int j=0; newstring[j]!="," || newstring[j]!="." || newstring[j]!="?"; j++)
+				
+				
+			{
+			   
+				substring[i] = newstring [j];
+			
+			
+		}
+		
+		
+		     
+               
+}
+		
+		System.out.println(substring[0]);*/
+
+
+
+
+
+
+
+
+
+
