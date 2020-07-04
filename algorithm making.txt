@@ -9,6 +9,89 @@
 			{
 			   
 				substring[i] = newstring [j];
+	/*   int temp1 = s1.length;
+	   int temp2 = s2.length;
+	  
+	  
+	   String [] fs1 = new String [1000];
+	   String [] fs2 = new String [1000];
+	   for (int k=0; k<s1.length; k++)
+	    {
+	    	fs1[k] ="";
+	    	
+	    	
+	    	
+	    }
+	    int j=0;
+	    
+       for (int i = 0; j!=temp1; i++)
+	    
+	    {
+	    	
+	    		
+	    	for (; !s1[j].contentEquals(".")  ; j++)
+	    		
+	    		 
+	    	{  fs1[i]+=s1[j];
+
+    		
+	    		
+	     
+                 
+	    	}
+	    	j++;
+	    	
+	    	
+	    	
+	    	System.out.println("Substrings in file 1 are -> "+  fs1[i]);
+	    
+	 
+	    
+	
+	    } 
+       
+       
+      for (int k1=0; k1<s2.length; k1++)
+	    {
+	    	fs2[k1] ="";
+	    	
+	    	
+	    	
+	    }
+	    int l=0;
+	    
+      for (int i1 = 0; l!=temp1; i1++)
+	    
+	    {
+	    	
+	    		
+	    	for (; !s2[l].contentEquals(".")  ; l++)
+	    		
+	    		 
+	    	{  fs2[i1]+=s1[l];
+
+   		
+	    		
+	     
+                
+	    	}
+	    	l++;
+	    	
+	    	
+	    	
+	    	System.out.println("Substrings in file 2 are -> "+  fs2[i1]);
+	    
+
+
+
+
+
+
+
+
+
+
+
 			
 			
 		}
