@@ -1,0 +1,62 @@
+   String f1 = "hi Ali. how are you?. are you hungry. you and i in love.";
+	    String f2 = "hi Fahad. you and i in love. are you hungry. you.";
+	   
+	    
+	  String[] newf1 = Substring(f1);
+	  
+	  String [] newf2 = Substring(f2);
+	  int n = newf1.length;
+	 
+	/*  if (newf1[2].equals(newf2[2]) )
+	  {
+		 // System.out.println( " True");
+		  
+	  }
+	  else
+	  {
+		  
+		  
+		// System.out.println("False");
+		  
+		  
+	 }*/
+	  
+	   
+	  
+	  
+	
+	 
+	  
+	 for (int i=0; !newf1[i].contentEquals(""); i++)
+		
+		 {
+		       for (int j=0; !newf2[j].contentEquals(""); j++)
+	  
+		  {
+		    	   if (newf1[i].equals(newf2[j]))
+		  
+		  {
+				 
+				 System.out.println(" Plageriasm found and The common line is -> " + newf1[i]);
+				 
+				
+			 }
+		  else
+		  {
+			 
+		  }
+		    	   
+		    	   
+		  } 
+				  
+				  
+				  
+	  
+			  
+			  
+			  
+		  }
+		  
+		  
+		  
+		  
