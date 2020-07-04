@@ -10,6 +10,61 @@
 			   
 				substring[i] = newstring [j];
 	/*   int temp1 = s1.length;
+
+/*	String s1 = "Fahad";
+		  
+		char[] news1 =s1.toCharArray();
+		int s = 1;
+		int e = 3;
+		char[] substring = new char[s1.length()];
+		int j =0;
+	   for (int i = s; i<e; i++)
+	   {
+		   
+		   
+		   substring[j] = news1[i];
+		   j++;
+		   
+	   }
+	   String newsubstring = substring.toString();
+	   
+         System.out.println(newsubstring);
+         
+         
+   // checking string in other string 
+         
+   // typr bool 
+         // arguments = string,substring*/
+         
+          
+        // String new1 = "abcd fahad";
+      //   String [] array = new1.split(" ");
+       //  System.out.println(array[0]);
+	//	String s1 = " Hi Fahad ! how are you?";
+		//String [] array = s1.split("");
+		
+		
+/*		char[] substring = new char[s1.length()];
+		int j =0;
+	   for (int i = start; i<end; i++)
+	   {
+		   
+		   
+		   substring[j] = news1[i];
+		   j++;
+		   
+	   } */
+
+
+
+
+
+
+
+
+
+
+
 	   int temp2 = s2.length;
 	  
 	  
