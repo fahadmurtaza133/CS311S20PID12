@@ -20,6 +20,43 @@
 		
 		System.out.println(substring[0]);*/
 
+/*   for (int l=0; l<s2.length; l++)
+	    {
+	    	fs2[l] ="";
+	    	
+	    	
+	    	
+	    }
+	 
+	 int z=0;
+	    
+		 for (int f= 0; z!=temp2; f++)
+		    
+		    {
+		    	
+		    		
+		    	for (; !s2[z].contentEquals(".")  ; z++)
+		    		
+		    		 
+		    	{  fs2[f]+=s1[z];
+
+	    		
+		    		
+		     
+	                 
+		    	}
+		    	z++;
+		    	
+		    	System.out.println("Substrings in file 2 are -> "+  fs2[f]);
+			    
+		    
+		 
+		    
+		
+		    }  /*
+	 
+	 
+	 
 
 
 
