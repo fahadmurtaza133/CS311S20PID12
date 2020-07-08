@@ -1,11 +1,13 @@
 package plagrism;
 
+
 public class plagrism {
 	
 
 	public static String[] Substring(String s)
 	{
 		
+
 		   int temp1 = s.length();
 		   String[]  s1 = s.split("");
 		   
@@ -19,6 +21,7 @@ public class plagrism {
 		    	
 		    	
 		    }
+		    
 		    int j=0;
 		    
 	       for (int i = 0; j!=temp1; i++)
@@ -53,78 +56,224 @@ public class plagrism {
 	
 		
 	}
+	
+	
+/*	public static String getLongestCommonPrefix(String str1, String str2) {
+	    int compareLength = Math.min(str1.length(), str2.length());
+	    for (int i = 0; i < compareLength; i++) {
+	        if (str1.charAt(i) != str2.charAt(i)) {
+	            return str1.substring(0, i);
+	        }
+	    }
+	    String A = str1.substring(0, compareLength);
+	    return A;
+	}
+	
+	public static void KMPSearch(String pat, String txt) 
+    { 
+        int M = pat.length(); 
+        int N = txt.length(); 
+  
+        // create lps[] that will hold the longest 
+        // prefix suffix values for pattern 
+        int lps[] = new int[M]; 
+        int j = 0; // index for pat[] 
+  
+        // Preprocess the pattern (calculate lps[] 
+        // array) 
+       computeLPSArray(pat, M, lps); 
+  
+        int i = 0; // index for txt[] 
+        while (i < N) { 
+            if (pat.charAt(j) == txt.charAt(i)) { 
+                j++; 
+                i++; 
+            } 
+            if (j == M) { 
+                System.out.println("Found pattern "
+                                   + "at index " + (i - j)); 
+                j = lps[j - 1]; 
+            } 
+  
+            // mismatch after j matches 
+            else if (i < N && pat.charAt(j) != txt.charAt(i)) { 
+                // Do not match lps[0..lps[j-1]] characters, 
+                // they will match anyway 
+                if (j != 0) 
+                    j = lps[j - 1]; 
+                else
+                    i = i + 1; 
+            } 
+        } 
+    } 
+  
+   public static void computeLPSArray(String pat, int M, int lps[]) 
+    { 
+        // length of the previous longest prefix suffix 
+        int len = 0; 
+        int i = 1; 
+        lps[0] = 0; // lps[0] is always 0 
+  
+        // the loop calculates lps[i] for i = 1 to M-1 
+        while (i < M) { 
+            if (pat.charAt(i) == pat.charAt(len)) { 
+                len++; 
+                lps[i] = len; 
+                i++; 
+            } 
+            else // (pat[i] != pat[len]) 
+            { 
+                // This is tricky. Consider the example. 
+                // AAACAAAA and i = 7. The idea is similar 
+                // to search step. 
+                if (len != 0) { 
+                    len = lps[len - 1]; 
+  
+                    // Also, note that we do not increment 
+                    // i here 
+                } 
+                else // if (len == 0) 
+                { 
+                    lps[i] = len; 
+                    i++; 
+                } 
+            } 
+        } 
+    } */	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		   String f1 = "hi Ali. how are you?. are you hungry. you and i in love.";
-		    String f2 = "hi Fahad. you and i in love. are you hungry. you.";
-		   
+		
+		
+		  long startTime = System.nanoTime();
+		   String f1 = "Hi Ali. how are you?. ali?.";
+		   String X = "Hi Fahad. how are you?. ali?.";
 		    
 		  String[] newf1 = Substring(f1);
 		  
-		  String [] newf2 = Substring(f2);
-		  int n = newf1.length;
+		  
+ 
+		 
+	  int m = X.length();
+	 
+		
+	
+		  for (int ii=0; !newf1[ii].contentEquals(""); ii++)
+			  
+		  {
+			  String Y = newf1[ii].toString();
+		  
+			  int n = Y.length();
+	
+			        int[][] LCSuff = new int[m + 1][n + 1]; 
+			  
+			        // To store length of the longest common substring 
+			        int len = 0; 
+			  
+			        // To store the index of the cell which contains the 
+			        // maximum value. This cell's index helps in building 
+			        // up the longest common substring from right to left. 
+			        int row = 0, col = 0; 
+			  
+			        /* Following steps build LCSuff[m+1][n+1] in bottom 
+			           up fashion. */
+		      for (int i = 0; i <= m; i++) { 
+			            for (int j = 0; j <= n; j++) { 
+			                if (i == 0 || j == 0) 
+			                    LCSuff[i][j] = 0; 
+			  
+			                else if (X.charAt(i - 1) == Y.charAt(j - 1)) { 
+			                    LCSuff[i][j] = LCSuff[i - 1][j - 1] + 1; 
+			                    if (len < LCSuff[i][j]) { 
+			                        len = LCSuff[i][j]; 
+			                        row = i; 
+			                        col = j; 
+			                    } 
+			                } 
+			                else
+			                    LCSuff[i][j] = 0; 
+			            } 
+			        } 
+			  
+			        // if true, then no common substring exists 
+			        if (len == 0) { 
+			            System.out.println("No Common Substring"); 
+			            return; 
+			        } 
+			  
+			        // allocate space for the longest common substring 
+			        String resultStr = ""; 
+			  
+			        // traverse up diagonally form the (row, col) cell 
+			        // until LCSuff[row][col] != 0 
+			        while (LCSuff[row][col] != 0) { 
+			            resultStr = X.charAt(row - 1) + resultStr; // or Y[col-1] 
+			            --len; 
+			  
+			            // move diagonally up to previous cell 
+			            row--; 
+			            col--; 
+			        } 
+			  
+			        // required longest common substring 
+			        System.out.println(resultStr);
+			        
+			       
+			        
+			        
+			        
+			     
+			    } 
+		  long endTime = System.nanoTime();
+	        System.out.println("It took " + (endTime - startTime) + " nanoseconds"); 
+	}
+	
+			  
+			  
+			  
+			  
+			  
+			  
+		  
+			  
 		 
 		  
-// finding substring in other string	  
-		 for (int i=0; !newf1[i].contentEquals(""); i++)
+		  
+		  
+		
+					  
+					  
+					  
+					  		
+
 			
-			 {
-			       for (int j=0; !newf2[j].contentEquals(""); j++)
-		  
-			  {
-			    	   if (newf1[i].equals(newf2[j]))
-			  
-			  {
-					 
-					 System.out.println(" Plageriasm found and The common line is -> " + newf1[i]);
-					 
-					
-				 }
-			  else
-			  {
-				 
-			  }
-			    	   
-			    	   
-			  } 
-					  
-					  
-					  
-		  
-				  
-				  
-				  
-			  }
-			  
-			  
-			  
-			  
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	}
-
+	
 }
+			
+
