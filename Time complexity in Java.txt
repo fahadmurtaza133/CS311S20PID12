@@ -1,0 +1,16 @@
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		long starttime = System.nanoTime();
+
+   // code you want to run
+  
+
+                   long endTime = System.nanoTime();
+	        System.out.println("Took "+(endTime - starttime) + " ns"); 
+
+
+}
+
+               
