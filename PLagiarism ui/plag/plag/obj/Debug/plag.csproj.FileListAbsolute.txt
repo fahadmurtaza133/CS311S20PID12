@@ -1,0 +1,10 @@
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.Plagiarism.resources
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.Properties.Resources.resources
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\final project aoa\plag\plag\bin\Debug\plag.exe.config
+C:\Users\Dell\Desktop\final project aoa\plag\plag\bin\Debug\plag.exe
+C:\Users\Dell\Desktop\final project aoa\plag\plag\bin\Debug\plag.pdb
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.exe
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.pdb
+C:\Users\Dell\Desktop\final project aoa\plag\plag\obj\Debug\plag.twofiles.resources
