@@ -1,0 +1,398 @@
+package ourgui.GUI;
+
+import java.io.*  ;
+import java.util.Scanner;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileSystemView;
+
+
+
+public class GUI  {
+	
+	
+		
+	
+	   String f1 = "";
+	   String X = "";
+	
+	
+	  JButton Button1 = new JButton("Click here to check plagiarism between two text files ");
+	  JButton Button2 = new JButton("Click here to check plagiarism in folder containing text files ");
+	  JButton Button3 = new JButton("Two programs check");
+	  JButton Button11 = new JButton("Click here to import first text files ");
+	  JButton Button22 = new JButton("Click here to import second text files ");
+	  JButton Button33 = new JButton("check plagiarism ");
+	  JLabel l1 = new JLabel();
+	  JLabel l2 = new JLabel();
+	  
+	  public static String[] Substring(String s)
+		{
+			
+
+			  int temp1 = s.length();
+			   String[]  s1 = s.split("");
+			    String [] fs1 = new String [1000];
+			   for (int k=0; k<temp1; k++)
+			    {
+			    	fs1[k] ="";
+			    		
+			    }
+			    
+			    int j=0;
+			    
+		       for (int i = 0; j!=temp1; i++)
+			    
+			    {
+			    	
+			    		
+			    	for (; !s1[j].contentEquals(".")  ; j++)
+			    		
+			    		 
+			    	{  fs1[i]+=s1[j];
+
+		    	
+			    	}
+			    	j++;
+			    	
+			    	
+			    	
+			    	//System.out.println("Substrings in file 1 are -> "+  fs1[i]);
+			  
+			
+			    } 
+			
+	    return fs1;		
+			
+			
+		
+			
+		}
+		
+
+	  
+	  
+	  public void create_mainpage()
+	  {
+		  JFrame frame = new JFrame();
+		  JPanel panel = new JPanel();
+		  
+		    panel.add(Button1);
+			panel.add(Button2);
+			panel.add(Button3);
+			Button1.addActionListener(new ActionListener() {
+
+			    @Override
+			    public void actionPerformed(ActionEvent e) {
+			    	JFrame frame1 = new JFrame();
+					JPanel panel1 = new JPanel();
+					
+					 panel1.add(Button11);
+					 panel1.add(Button22);
+					 panel1.add(Button33);
+					  panel1.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+						panel1.setLayout(new GridLayout(0,1));
+						frame1.add(panel1, BorderLayout.CENTER);
+						frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						frame1.setTitle("check files");
+						frame1.pack();
+						frame1.setVisible(true);
+		// import first file on click
+					 
+					 Button11.addActionListener(new ActionListener() {
+
+						    @Override
+						    public void actionPerformed(ActionEvent e) {
+						    	
+						    
+						    	
+						         // if the user presses the save button show the save dialog 
+						         String com = e.getActionCommand(); 
+						   
+						         if (com.equals("save")) { 
+						             // create an object of JFileChooser class 
+						             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory()); 
+						   
+						             // invoke the showsSaveDialog function to show the save dialog 
+						             int r = j.showSaveDialog(null); 
+						   
+						             // if the user selects a file 
+						             if (r == JFileChooser.APPROVE_OPTION) 
+						   
+						             { 
+						                 // set the label to the path of the selected file 
+						                 l1.setText(j.getSelectedFile().getAbsolutePath()); 
+						            
+						    	 
+						             } 
+						             // if the user cancelled the operation 
+						             else
+						                 l1.setText("the user cancelled the operation"); 
+						         } 
+						   
+						         // if the user presses the open dialog show the open dialog 
+						         else { 
+						             // create an object of JFileChooser class 
+						             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+						            
+						   
+						             // invoke the showsOpenDialog function to show the save dialog 
+						             int r = j.showOpenDialog(null); 
+						   
+						             // if the user selects a file 
+						             if (r == JFileChooser.APPROVE_OPTION) 
+						   
+						             { 
+						                 // set the label to the path of the selected file 
+						                 l1.setText(j.getSelectedFile().getAbsolutePath()); 
+						                 File your_file1 = new File(j.getSelectedFile().getAbsolutePath()); //your text file
+								           	Scanner sc1;
+											try {
+												sc1 = new Scanner(your_file1);
+												//scanner with text file
+									    		
+									    		while(sc1.hasNextLine()){
+									    		    f1 =f1+sc1.nextLine();    
+									    		}
+									    		
+									    		
+											} catch (FileNotFoundException e1) {
+												// TODO Auto-generated catch block
+												e1.printStackTrace();
+											} 
+											
+											//JOptionPane.showMessageDialog(null, "User entered " + f1);
+						                 
+						             } 
+						             // if the user cancelled the operation 
+						             else
+						                 l1.setText("the user cancelled the operation"); 
+						         } 
+						              
+						     } 
+						
+						   	});
+						
+					 
+					
+					 
+					 
+	// import second text file 
+					 
+					 Button22.addActionListener(new ActionListener() {
+
+						    @Override
+						    public void actionPerformed(ActionEvent e) {
+						    	
+						    
+						    	
+						         // if the user presses the save button show the save dialog 
+						         String com = e.getActionCommand(); 
+						   
+						         if (com.equals("save")) { 
+						             // create an object of JFileChooser class 
+						             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory()); 
+						   
+						             // invoke the showsSaveDialog function to show the save dialog 
+						             int r = j.showSaveDialog(null); 
+						   
+						             // if the user selects a file 
+						             if (r == JFileChooser.APPROVE_OPTION) 
+						   
+						             { 
+						                 // set the label to the path of the selected file 
+						                 l2.setText(j.getSelectedFile().getAbsolutePath()); 
+						            
+						    	 
+						             } 
+						             // if the user cancelled the operation 
+						             else
+						                 l2.setText("the user cancelled the operation"); 
+						         } 
+						   
+						         // if the user presses the open dialog show the open dialog 
+						         else { 
+						             // create an object of JFileChooser class 
+						             JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+						            
+						   
+						             // invoke the showsOpenDialog function to show the save dialog 
+						             int r = j.showOpenDialog(null); 
+						   
+						             // if the user selects a file 
+						             if (r == JFileChooser.APPROVE_OPTION) 
+						   
+						             { 
+						                 // set the label to the path of the selected file 
+						                 l2.setText(j.getSelectedFile().getAbsolutePath()); 
+						                 File your_file1 = new File(j.getSelectedFile().getAbsolutePath()); //your text file
+								           	Scanner sc1;
+											try {
+												sc1 = new Scanner(your_file1);
+												//scanner with text file
+									    		
+									    		while(sc1.hasNextLine()){
+									    		    X =X+sc1.nextLine();    
+									    		}
+									    		
+									    		
+											} catch (FileNotFoundException e1) {
+												// TODO Auto-generated catch block
+												e1.printStackTrace();
+											} 
+											
+						                 
+											//JOptionPane.showMessageDialog(null, "User entered " + f2);
+						             } 
+						             // if the user cancelled the operation 
+						             else
+						                 l2.setText("the user cancelled the operation"); 
+						         } 
+						              
+						     } 
+						
+						   	});
+					 
+		// checking plagiarism between two files
+					 Button33.addActionListener(new ActionListener() {
+
+						    @Override
+						    public void actionPerformed(ActionEvent e) {
+						    	
+						    	  String[] newf1 = Substring(f1);
+								  
+						 		 
+							       int m = X.length();
+							 
+								
+							
+								  for (int ii=0; !newf1[ii].contentEquals(""); ii++)
+									  
+								  {
+									  String Y = newf1[ii].toString();
+								  
+									  int n = Y.length();
+							
+									        int[][] LCSuff = new int[m + 1][n + 1]; 
+									  
+									        // To store length of the longest common substring 
+									        int len = 0; 
+									  
+									        // To store the index of the cell which contains the 
+									        // maximum value. This cell's index helps in building 
+									        // up the longest common substring from right to left. 
+									        int row = 0, col = 0; 
+									  
+									      //   Following steps build LCSuff[m+1][n+1] in bottom 
+									        //   up fashion. 
+							    for (int i = 0; i <= m; i++) { 
+									            for (int j = 0; j <= n; j++) { 
+									                if (i == 0 || j == 0) 
+									                    LCSuff[i][j] = 0; 
+									  
+									                else if (X.charAt(i - 1) == Y.charAt(j - 1)) { 
+									                    LCSuff[i][j] = LCSuff[i - 1][j - 1] + 1; 
+									                    if (len < LCSuff[i][j]) { 
+									                        len = LCSuff[i][j]; 
+									                        row = i; 
+									                        col = j; 
+									                    } 
+									                } 
+									                else
+									                    LCSuff[i][j] = 0; 
+									            } 
+									        } 
+									  
+									        // if true, then no common substring exists 
+									        if (len == 0) { 
+									            System.out.println("No Common Substring"); 
+									            return; 
+									        } 
+									  
+									        // allocate space for the longest common substring 
+									        String resultStr = ""; 
+									  
+									        // traverse up diagonally form the (row, col) cell 
+									        // until LCSuff[row][col] != 0 
+									        while (LCSuff[row][col] != 0) { 
+									            resultStr = X.charAt(row - 1) + resultStr; // or Y[col-1] 
+									            --len; 
+									  
+									            // move diagonally up to previous cell 
+									            row--; 
+									            col--; 
+									        } 
+									  
+									        // required longest common substring 
+									        JOptionPane.showMessageDialog(null, "THE plagiarism lines are " + resultStr);
+									        
+									       
+									        
+									        
+									        
+									     
+									    } 
+								 // long endTime = System.nanoTime();
+							    //    System.out.println("It took " + (endTime - startTime) + " nanoseconds"); 
+								
+								
+								
+							}
+						    	
+						    	
+						    
+						    
+					 });
+					
+					
+					
+					 
+			    	
+			    }
+			    
+			});
+			   
+		  
+	  
+		    panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+			panel.setLayout(new GridLayout(0,1));
+			frame.add(panel, BorderLayout.CENTER);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setTitle("PLAGIARISM LEAKS");
+			frame.pack();
+			frame.setVisible(true);
+	
+	
+}
+	  
+	  
+	  
+	 
+	  
+ 
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+	
+	   GUI a = new GUI();
+	   a.create_mainpage();
+	   
+	    
+					
+	
+		
+		
+
+	}
+}
